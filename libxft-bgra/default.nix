@@ -1,4 +1,4 @@
-{ stdenv, lib, fetchFromGitHub, pkg-config, autoreconfHook, freetype, fontconfig, libXrender, utilmacros }:
+with import <nixpkgs> {};
 
 stdenv.mkDerivation rec {
   name = "libxft-bgra";
@@ -15,8 +15,8 @@ stdenv.mkDerivation rec {
     autoreconfHook
     freetype
     fontconfig
-    libXrender
-    utilmacros
+    xorg.libXrender
+    xorg.utilmacros
   ];
 
   meta = with lib; {
